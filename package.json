@@ -7,11 +7,10 @@
   ],
   "type": "module",
   "scripts": {
-    "start": "parcel src/index.html -p 8191 --no-cache",
-    "sync-res": "bun ./node_modules/safex-sync-res/src/index.ts",
+ "sync-res": "bun ./node_modules/safex-sync-res/src/index.ts",
     "predev": "bun run sync-res",
-    "dev": "parcel src/index.html -p 8191",
-    "build": "parcel build src/index.html --reporter @parcel/reporter-bundle-analyzer",
+    "dev": "vite",
+    "build": "tsc && vite build",
     "fix": "eslint ./src --fix"
   },
   "keywords": [],
