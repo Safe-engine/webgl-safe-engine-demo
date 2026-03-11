@@ -1,18 +1,18 @@
 import {
-    ButtonComp,
-    GraphicsRender,
-    GridLayoutComp,
-    LabelComp,
-    MaskRender,
-    NodeComp,
-    NodeRender,
-    SceneComponent,
-    Size,
-    SpriteRender,
-    Vec2,
+  ButtonComp,
+  GraphicsRender,
+  GridLayoutComp,
+  LabelComp,
+  MaskRender,
+  NodeComp,
+  NodeRender,
+  SceneComponent,
+  Size,
+  SpriteRender,
+  Vec2,
 } from '@safe-engine/webgl'
 
-import { sf_crash, sf_dialog_name, sf_progress_bar, sf_streak } from '../assets'
+import { sf_button, sf_crash, sf_dialog_name, sf_progress_bar, sf_streak } from '../assets'
 import { BackButton } from '../components/BackButton'
 import { RED, WHITE } from '../helper/constant'
 
@@ -42,9 +42,10 @@ export default class SpriteTest extends SceneComponent {
   render() {
     return (
       <SceneComponent>
-        <LabelComp string="Next Test" node={{ xy: [540, 200] }}>
-          <ButtonComp onPress={this.onPressNext} />
-        </LabelComp>
+        <ButtonComp spriteFrame={sf_button} onPress={this.onPressNext} >
+          <LabelComp string="Next Test" node={{ xy: [540, 200] }}>
+          </LabelComp>
+        </ButtonComp>
         <NodeRender $pushNode={this.$cases}>
           <LabelComp string="Sprite Test loop" node={{ xy: [540, 2000] }} />
           {Array(4).map((_, i = 1) => (
