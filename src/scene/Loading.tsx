@@ -1,6 +1,5 @@
 import { ProgressTimerComp, SceneComponent, SpriteRender, Vec2 } from '@safe-engine/webgl'
 
-import console from 'console'
 import { sf_progress_bar, sf_progress_bg } from '../assets'
 import { loadAssets } from '../binding/loader'
 
@@ -9,7 +8,6 @@ export class Loading extends SceneComponent {
   loadingSprite: ProgressTimerComp
 
   start() {
-    console.log('Loading start')
     loadAssets(this.onProgress.bind(this), () => {
       // loadScene(Home)
     })

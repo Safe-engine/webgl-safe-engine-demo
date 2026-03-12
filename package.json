@@ -30,7 +30,6 @@
     "eslint-plugin-prettier": "^5.5.5",
     "globals": "^17.4.0",
     "jiti": "^2.6.1",
-    "parcel": "^2.16.4",
     "safex-sync-res": "^1.3.9",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.57.0",
