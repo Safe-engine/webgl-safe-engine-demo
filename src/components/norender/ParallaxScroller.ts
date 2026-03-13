@@ -1,6 +1,6 @@
-import { NoRenderComponentX } from '@safe-engine/webgl'
+import { ComponentX } from '@safe-engine/webgl'
 
-export default class ParallaxScroller extends NoRenderComponentX {
+export default class ParallaxScroller extends ComponentX {
   resetY = 20.0
   speed = 20.0
 
@@ -12,6 +12,6 @@ export default class ParallaxScroller extends NoRenderComponentX {
     if (y <= this.resetY * this.node.scaleY) {
       y -= this.resetY * this.node.scaleY
     }
-    this.node.setPositionY(y)
+    this.node.posY =(y)
   }
 }

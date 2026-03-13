@@ -14,7 +14,7 @@ export function calculateAngelInRadian(from: Vec2, to: Vec2): Float {
 }
 
 export function getWorldPosition(node: NodeComp): Vec2 {
-  return node.convertToWorldSpaceAR(Vec2(node.getPosition()))
+  return node.convertToWorldSpaceAR(Vec2(node.position))
 }
 
 // Thêm hàm tính điểm trên đường cong Bezier bậc 2 của cocos2d-x
