@@ -1,7 +1,8 @@
-import { ProgressTimerComp, SceneComponent, SpriteRender, Vec2 } from '@safe-engine/webgl'
+import { loadScene, ProgressTimerComp, SceneComponent, SpriteRender, Vec2 } from '@safe-engine/webgl'
 
 import { sf_progress_bar, sf_progress_bg } from '../assets'
 import { loadAssets } from '../binding/loader'
+import { Home } from './Home'
 
 export class Loading extends SceneComponent {
   score = 0
@@ -9,12 +10,12 @@ export class Loading extends SceneComponent {
 
   start() {
     loadAssets(this.onProgress.bind(this), () => {
-      // loadScene(Home)
+      loadScene(Home)
     })
   }
 
   onProgress(p: Float) {
-    console.log('onProgress', p)
+    // console.log('onProgress', p)
     this.loadingSprite.fillRange = p
   }
 

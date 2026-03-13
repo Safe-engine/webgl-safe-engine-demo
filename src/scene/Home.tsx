@@ -9,7 +9,7 @@ import {
   ScrollViewDirection,
   Size,
   SpriteRender,
-  Vec2,
+  Vec2
 } from '@safe-engine/webgl'
 
 import { sf_base, sf_button, sf_crash } from '../assets'
