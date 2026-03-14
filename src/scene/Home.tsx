@@ -16,6 +16,7 @@ import { sf_base, sf_button, sf_crash } from '../assets'
 import { BLUE, Scenes, WHITE } from '../helper/constant'
 import ButtonScene from './ButtonScene'
 import { GraphicsScene } from './GraphicsScene'
+import { InputTestScene } from './InputTestScene'
 import { LabelScene } from './Label'
 import MotionStreakTest from './MotionStreakTest'
 import SpriteTest from './SpriteTest'
@@ -50,9 +51,9 @@ export class Home extends SceneComponent {
     // if (id === Scenes.DragonBones) {
     //   loadScene(DragonBonesScene)
     // }
-    // if (id === Scenes.TouchEvents) {
-    //   loadScene(InputTestScene)
-    // }
+    if (id === Scenes.TouchEvents) {
+      loadScene(InputTestScene)
+    }
     if (id === Scenes.Sprite) {
       loadScene(SpriteTest)
     }

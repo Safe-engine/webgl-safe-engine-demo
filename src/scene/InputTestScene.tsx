@@ -1,8 +1,7 @@
-import { ButtonComp, InputComp, LabelComp, SceneComponent, Vec2 } from '@safe-engine/webgl'
-
+import { ButtonComp, LabelComp, SceneComponent, Vec2 } from '@safe-engine/webgl'
+import { InputComp } from '@safe-engine/webgl/src/gui'
 import { sf_button } from '../assets'
 import { BackButton } from '../components/BackButton'
-
 export class InputTestScene extends SceneComponent {
   captchaInput: InputComp
 
