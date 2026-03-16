@@ -1,4 +1,4 @@
-import { ButtonComp, LabelComp, loadScene, SceneComponent, SpriteRender, Vec2, WidgetComp } from '@safe-engine/webgl'
+import { ButtonComp, LabelComp, loadScene, SceneComponent, Vec2, WidgetComp } from '@safe-engine/webgl'
 import { SpineSkeleton } from '@safe-engine/webgl/dist/spine'
 import { BoxCollider } from '@safe-engine/webgl/src/collider/CollideComponent'
 
@@ -37,22 +37,19 @@ export class Game extends SceneComponent {
   }
 
   render() {
-    return (
-      <SceneComponent>
-        <LabelComp node={{ position: Vec2(106, 240) }} string="Game" font={defaultFont} />
-        <SpriteRender node={{ anchorY: 0.5 }} spriteFrame={sf_crash}>
-          <ButtonComp onPress={this.onPress} />
-          <WidgetComp top={20} right={10} />
-        </SpriteRender>
-        <Hero $ref={this.hero} node={{ position: Vec2(550, 430) }} gameNode={this.node}>
-          <BoxCollider width={100} height={100} offset={[10, 10]} />
-        </Hero>
-        <Hero $ref={this.hero} node={{ xy: [550, 130], rotation: 180 }} gameNode={this.node}>
-          <BoxCollider width={100} height={100} offset={[10, 10]} />
-        </Hero>
-        <SpineSkeleton node={{ position: Vec2(306, 940) }} data={sp_spineboy_pma} animation="idle" loop={true} />
-        <BackButton />
-      </SceneComponent>
-    )
+    <SceneComponent>
+      <LabelComp node={{ position: Vec2(106, 240) }} string="Game" font={defaultFont} />
+      <ButtonComp node={{ anchorY: 0.5 }} spriteFrame={sf_crash} onPress={this.onPress}>
+        <WidgetComp top={20} right={10} />
+      </ButtonComp>
+      <Hero $ref={this.hero} node={{ position: Vec2(550, 430) }} gameNode={this.node}>
+        <BoxCollider width={100} height={100} offset={[10, 10]} />
+      </Hero>
+      <Hero $ref={this.hero} node={{ xy: [550, 130], rotation: 180 }} gameNode={this.node}>
+        <BoxCollider width={100} height={100} offset={[10, 10]} />
+      </Hero>
+      <SpineSkeleton node={{ position: Vec2(306, 940) }} data={sp_spineboy_pma} animation="idle" loop={true} />
+      <BackButton />
+    </SceneComponent>
   }
 }

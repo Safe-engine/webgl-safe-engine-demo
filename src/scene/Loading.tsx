@@ -12,6 +12,7 @@ export class Loading extends SceneComponent {
     loadAssets(this.onProgress.bind(this), () => {
       loadScene(Home)
     })
+    console.log('start',   this.loadingSprite)
   }
 
   onProgress(p: Float) {
@@ -20,12 +21,10 @@ export class Loading extends SceneComponent {
   }
 
   render() {
-    return (
-      <SceneComponent>
-        <SpriteRender node={{ position: Vec2(540, 250), opacity: 100 }} spriteFrame={sf_progress_bg}>
-          <ProgressTimerComp $ref={this.loadingSprite} node={{ position: Vec2(181, 30) }} spriteFrame={sf_progress_bar} fillRange={0} />
-        </SpriteRender>
-      </SceneComponent>
-    )
+    <SceneComponent>
+      <SpriteRender node={{ position: Vec2(540, 250), opacity: 100 }} spriteFrame={sf_progress_bg}>
+        <ProgressTimerComp $ref={this.loadingSprite} node={{ position: Vec2(181, 30) }} spriteFrame={sf_progress_bar} fillRange={0} />
+      </SpriteRender>
+    </SceneComponent>
   }
 }

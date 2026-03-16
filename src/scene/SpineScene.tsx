@@ -36,16 +36,13 @@ export class SpineScene extends SceneComponent {
   }
 
   render() {
-    return (
-      <SceneComponent>
-        <LabelComp node={{ xy: [526, 1698] }} string="Hello safex spine" font={defaultFont} />
-        <SpineSkeleton $ref={this.skeleton} node={{ xy: [521, 575] }} data={sp_spineboy_pma} loop={true} />
-        <LabelComp $ref={this.animName} string="Anim Name" node={{ xy: [560, 495], w: 500, color: LIME }} />
-        <BackButton />
-        <LabelComp string="Next Anim" node={{ xy: [540, 265], color: ORANGE }}>
-          <ButtonComp onPress={this.nextAnim} />
-        </LabelComp>
-      </SceneComponent>
-    )
+    <SceneComponent>
+      <LabelComp node={{ xy: [526, 1698] }} string="Hello safex spine" font={defaultFont} />
+      <SpineSkeleton $ref={this.skeleton} node={{ xy: [521, 575] }} data={sp_spineboy_pma} loop={true} />
+      <LabelComp $ref={this.animName} string="Anim Name" node={{ xy: [560, 495], w: 500, color: LIME }} />
+      <BackButton />
+      <ButtonComp string="Next Anim" node={{ xy: [540, 265], color: ORANGE }} onPress={this.nextAnim}>
+      </ButtonComp>
+    </SceneComponent>
   }
 }

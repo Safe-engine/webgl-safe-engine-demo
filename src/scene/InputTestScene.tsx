@@ -11,15 +11,13 @@ export class InputTestScene extends SceneComponent {
   }
 
   render() {
-    return (
-      <SceneComponent>
-        <LabelComp node={{ position: Vec2(406, 440) }} string="Hello safex Input" />
-        {/* <InputComp $ref={this.captchaInput} node={{ position: Vec2(420, 320) }} placeHolder="Input here"></InputComp> */}
-        <ButtonComp node={{ position: Vec2(382, 150) }} spriteFrame={sf_button} onPress={this.onSubmitCaptcha}>
-          <LabelComp string="Submit" node={{ position: Vec2(72, 25) }} />
-        </ButtonComp>
-        <BackButton />
-      </SceneComponent>
-    )
+    <SceneComponent>
+      <LabelComp node={{ position: Vec2(406, 440) }} string="Hello safex Input" />
+      {/* <InputComp $ref={this.captchaInput} node={{ position: Vec2(420, 320) }} placeHolder="Input here"></InputComp> */}
+      <ButtonComp node={{ position: Vec2(382, 150) }} spriteFrame={sf_button} onPress={this.onSubmitCaptcha}>
+        <LabelComp string="Submit" node={{ position: Vec2(72, 25) }} />
+      </ButtonComp>
+      <BackButton />
+    </SceneComponent>
   }
 }

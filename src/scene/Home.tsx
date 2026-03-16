@@ -84,7 +84,6 @@ export class Home extends SceneComponent {
   }
 
   render() {
-    return (
       <SceneComponent>
         <SpriteRender node={{ xy: [540, 960], color: BLUE }} spriteFrame={sf_base} tiledSize={Size(1080, 1920)}></SpriteRender>
         <SpriteRender spriteFrame={sf_crash} />
@@ -102,6 +101,5 @@ export class Home extends SceneComponent {
           ))}
         </ScrollViewComp>
       </SceneComponent>
-    )
   }
 }

@@ -17,12 +17,10 @@ export class GraphicsScene extends SceneComponent {
   }
 
   render() {
-    return (
-      <SceneComponent>
-        <LabelComp node={{ xy: [306, 240] }} string="Hello safex Graphics" />
-        <GraphicsRender $ref={this.graphics} fillColor={CYAN} strokeColor={PINK} lineWidth={5} />
-        <BackButton />
-      </SceneComponent>
-    )
+    <SceneComponent>
+      <LabelComp node={{ xy: [306, 240] }} string="Hello safex Graphics" />
+      <GraphicsRender $ref={this.graphics} fillColor={CYAN} strokeColor={PINK} lineWidth={5} />
+      <BackButton />
+    </SceneComponent>
   }
 }

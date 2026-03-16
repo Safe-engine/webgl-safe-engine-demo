@@ -19,12 +19,10 @@ export default class MotionStreakTest extends SceneComponent {
   }
 
   render() {
-    return (
-      <SceneComponent>
-        <MotionStreakComp $ref={this.streak} spriteFrame={sf_streak} node={{ posX: 540 }} />
-        <MotionStreakComp $ref={this.streak2} spriteFrame={sf_streak} node={{ posX: 340 }} />
-        <BackButton />
-      </SceneComponent>
-    )
+    <SceneComponent>
+      <MotionStreakComp $ref={this.streak} spriteFrame={sf_streak} node={{ posX: 540 }} />
+      <MotionStreakComp $ref={this.streak2} spriteFrame={sf_streak} node={{ posX: 340 }} />
+      <BackButton />
+    </SceneComponent>
   }
 }

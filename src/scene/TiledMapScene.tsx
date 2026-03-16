@@ -18,15 +18,13 @@ export class TiledMapScene extends SceneComponent {
   }
 
   render() {
-    return (
-      <SceneComponent>
-        <LabelComp node={{ xy: [540, 140] }} string="Hello safex tiled" />
-        <BackButton />
-        <TiledMapComp $ref={this.tiledMapComp} node={{ xy: [110, 2620] }} mapFile={map_1_json}>
-          <SpriteRender $ref={this.spriteRender} spriteFrame={sf_crash}></SpriteRender>
-          <SpriteRender $ref={this.spriteRender2} spriteFrame={sf_dialog_name}></SpriteRender>
-        </TiledMapComp>
-      </SceneComponent>
-    )
+    <SceneComponent>
+      <LabelComp node={{ xy: [540, 140] }} string="Hello safex tiled" />
+      <BackButton />
+      <TiledMapComp $ref={this.tiledMapComp} node={{ xy: [110, 2620] }} mapFile={map_1_json}>
+        <SpriteRender $ref={this.spriteRender} spriteFrame={sf_crash}></SpriteRender>
+        <SpriteRender $ref={this.spriteRender2} spriteFrame={sf_dialog_name}></SpriteRender>
+      </TiledMapComp>
+    </SceneComponent>
   }
 }
