@@ -10,9 +10,10 @@ export class Hero extends ComponentX<HeroProps> {
   sprite: SpriteRender
 
   start() {
-    console.log('hero', this.hp)
+    console.log('hero is bar', this.hp)
   }
+
   render() {
-    return <SpriteRender node={{ position: Vec2(500, 240) }} $ref={this.sprite} spriteFrame={sf_progress_bg}></SpriteRender>
+    <SpriteRender node={{ position: Vec2(500, 240) }} $ref={this.sprite} spriteFrame={sf_progress_bg}></SpriteRender>
   }
 }

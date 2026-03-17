@@ -1,4 +1,4 @@
-import { ButtonComp, LabelComp, loadScene, SceneComponent, Vec2, WidgetComp } from '@safe-engine/webgl'
+import { ButtonComp, instantiate, LabelComp, loadScene, SceneComponent, Vec2, WidgetComp } from '@safe-engine/webgl'
 import { SpineSkeleton } from '@safe-engine/webgl/dist/spine'
 import { BoxCollider } from '@safe-engine/webgl/src/collider/CollideComponent'
 
@@ -12,9 +12,9 @@ export class Game extends SceneComponent {
   // uiRef: UIController = null
   hero: Hero
 
-  onStart() {
+  start() {
     //   schedule((dt) => {
-    //     const monster = instantiate(Monster)
+    const monster = instantiate(Hero, { gameNode: this.node })
     //     const box = monster.getComponent(BoxCollider)
     //     box.width = 123
     //     monster.on(DEATH, (point) => {
@@ -25,7 +25,7 @@ export class Game extends SceneComponent {
     //         loadScene('game')
     //       }
     //     })
-    //     this.addChild(monster)
+    this.node.addChild(monster.node)
     //   }, 2)
   }
 
@@ -45,7 +45,7 @@ export class Game extends SceneComponent {
       <Hero $ref={this.hero} node={{ position: Vec2(550, 430) }} gameNode={this.node}>
         <BoxCollider width={100} height={100} offset={[10, 10]} />
       </Hero>
-      <Hero $ref={this.hero} node={{ xy: [550, 130], rotation: 180 }} gameNode={this.node}>
+      <Hero node={{ xy: [550, 130], rotation: 180 }} gameNode={this.node}>
         <BoxCollider width={100} height={100} offset={[10, 10]} />
       </Hero>
       <SpineSkeleton node={{ position: Vec2(306, 940) }} data={sp_spineboy_pma} animation="idle" loop={true} />
