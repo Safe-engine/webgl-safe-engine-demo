@@ -2,7 +2,7 @@ import { ButtonComp, LabelComp, loadScene, SceneComponent, Vec2, WidgetComp } fr
 import { SpineSkeleton } from '@safe-engine/webgl/dist/spine'
 import { BoxCollider } from '@safe-engine/webgl/src/collider/CollideComponent'
 
-import { defaultFont, sf_crash, sp_spineboy_pma } from '../assets'
+import { sf_crash, sp_spineboy_pma } from '../assets'
 import { BackButton } from '../components/BackButton'
 import { Hero } from '../components/Hero'
 import { Home } from './Home'
@@ -38,7 +38,7 @@ export class Game extends SceneComponent {
 
   render() {
     <SceneComponent>
-      <LabelComp node={{ position: Vec2(106, 240) }} string="Game" font={defaultFont} />
+      <LabelComp node={{ position: Vec2(106, 240) }} string="Game" />
       <ButtonComp node={{ anchorY: 0.5 }} spriteFrame={sf_crash} onPress={this.onPress}>
         <WidgetComp top={20} right={10} />
       </ButtonComp>

@@ -15,11 +15,16 @@ import {
 import { sf_base, sf_button, sf_crash } from '../assets'
 import { BLUE, Scenes, WHITE } from '../helper/constant'
 import ButtonScene from './ButtonScene'
+import { CollidersScene } from './CollidersScene'
+import { DragonBonesScene } from './DragonBonesScene'
+import { Game } from './Game'
 import { GraphicsScene } from './GraphicsScene'
 import { InputTestScene } from './InputTestScene'
 import { LabelScene } from './Label'
 import MotionStreakTest from './MotionStreakTest'
+import { SpineScene } from './SpineScene'
 import SpriteTest from './SpriteTest'
+import { TiledMapScene } from './TiledMapScene'
 
 export class Home extends SceneComponent {
   static readonly cases = [
@@ -45,12 +50,12 @@ export class Home extends SceneComponent {
   onPress(event: ButtonComp) {
     const id = event.node.getData<Integer>('id')
     console.log('Clicked', id, Scenes[id])
-    // if (id === Scenes.Spine) {
-    //   loadScene(SpineScene)
-    // }
-    // if (id === Scenes.DragonBones) {
-    //   loadScene(DragonBonesScene)
-    // }
+    if (id === Scenes.Spine) {
+      loadScene(SpineScene)
+    }
+    if (id === Scenes.DragonBones) {
+      loadScene(DragonBonesScene)
+    }
     if (id === Scenes.TouchEvents) {
       loadScene(InputTestScene)
     }
@@ -66,21 +71,21 @@ export class Home extends SceneComponent {
     if (id === Scenes.Graphics) {
       loadScene(GraphicsScene)
     }
-    // if (id === Scenes.Collider) {
-    //   loadScene(CollidersScene)
-    // }
+    if (id === Scenes.Collider) {
+      loadScene(CollidersScene)
+    }
     // if (id === Scenes.Physics) {
     //   loadScene(PhysicsScene)
     // }
-    // if (id === Scenes.Game) {
-    //   loadScene(Game)
-    // }
+    if (id === Scenes.Game) {
+      loadScene(Game)
+    }
     if (id === Scenes.MotionStreak) {
       loadScene(MotionStreakTest)
     }
-    // if (id === Scenes.Tiled) {
-    //   loadScene(TiledMapScene)
-    // }
+    if (id === Scenes.Tiled) {
+      loadScene(TiledMapScene)
+    }
   }
 
   render() {

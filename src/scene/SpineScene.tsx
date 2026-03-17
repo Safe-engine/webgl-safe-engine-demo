@@ -1,7 +1,7 @@
 import { ButtonComp, LabelComp, SceneComponent } from '@safe-engine/webgl'
 import { SpineSkeleton } from '@safe-engine/webgl/dist/spine'
 
-import { defaultFont, sp_spineboy_pma } from '../assets'
+import { sf_button, sp_spineboy_pma } from '../assets'
 import { BackButton } from '../components/BackButton'
 import { LIME, ORANGE } from '../helper/constant'
 
@@ -37,11 +37,12 @@ export class SpineScene extends SceneComponent {
 
   render() {
     <SceneComponent>
-      <LabelComp node={{ xy: [526, 1698] }} string="Hello safex spine" font={defaultFont} />
+      <LabelComp node={{ xy: [526, 1698] }} string="Hello safex spine"   />
       <SpineSkeleton $ref={this.skeleton} node={{ xy: [521, 575] }} data={sp_spineboy_pma} loop={true} />
       <LabelComp $ref={this.animName} string="Anim Name" node={{ xy: [560, 495], w: 500, color: LIME }} />
       <BackButton />
-      <ButtonComp string="Next Anim" node={{ xy: [540, 265], color: ORANGE }} onPress={this.nextAnim}>
+      <ButtonComp spriteFrame={sf_button} node={{ xy: [540, 265], color: ORANGE }} onPress={this.nextAnim}>
+        <LabelComp string="Next Anim" />
       </ButtonComp>
     </SceneComponent>
   }

@@ -1,7 +1,7 @@
 import { BoxCollider, Collider, LabelComp, SceneComponent, SpriteRender } from '@safe-engine/webgl'
 
 import { DragonBonesComp } from '@safe-engine/webgl/dist/dragonbones'
-import { db_mecha_1004d_show, defaultFont, sf_crash } from '../assets'
+import { db_mecha_1004d_show, sf_crash } from '../assets'
 import { BackButton } from '../components/BackButton'
 
 export class CollidersScene extends SceneComponent {
@@ -13,7 +13,7 @@ export class CollidersScene extends SceneComponent {
 
   render() {
     <SceneComponent>
-      <LabelComp node={{ xy: [530, 1712] }} string="Hello safex Collide" font={defaultFont} />
+      <LabelComp node={{ xy: [530, 1712] }} string="Hello safex Collide" />
       <BackButton />
       <DragonBonesComp $ref={this.dragon} node={{ xy: [576, 724] }} data={db_mecha_1004d_show} animation="idle" playTimes={3}>
         <Collider onCollisionEnter={this.onCollisionEnter} />
