@@ -41,8 +41,8 @@ export default class SpriteTest extends SceneComponent {
 
   render() {
     <SceneComponent>
-      <ButtonComp spriteFrame={sf_button} onPress={this.onPressNext} >
-        <LabelComp string="Next Test" node={{ xy: [540, 200] }}>
+      <ButtonComp spriteFrame={sf_button} node={{ xy: [540, 200] }} onPress={this.onPressNext} >
+        <LabelComp string="Next Test"node={{ xy: [85.5, 26] }} >
         </LabelComp>
       </ButtonComp>
       <NodeRender $pushNode={this.$cases}>
