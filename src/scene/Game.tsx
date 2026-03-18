@@ -1,6 +1,5 @@
-import { ButtonComp, instantiate, LabelComp, loadScene, SceneComponent, Vec2, WidgetComp } from '@safe-engine/webgl'
+import { BoxCollider, ButtonComp, instantiate, LabelComp, loadScene, SceneComponent, Vec2, WidgetComp } from '@safe-engine/webgl'
 import { SpineSkeleton } from '@safe-engine/webgl/dist/spine'
-import { BoxCollider } from '@safe-engine/webgl/src/collider/CollideComponent'
 
 import { sf_crash, sp_spineboy_pma } from '../assets'
 import { BackButton } from '../components/BackButton'

@@ -16,8 +16,7 @@ export class CollidersScene extends SceneComponent {
       <LabelComp node={{ xy: [530, 1712] }} string="Hello safex Collide" />
       <BackButton />
       <DragonBonesComp $ref={this.dragon} node={{ xy: [576, 724] }} data={db_mecha_1004d_show} animation="idle" playTimes={3}>
-        <Collider onCollisionEnter={this.onCollisionEnter} />
-        <BoxCollider height={200} width={200} offset={[-100, -200]} />
+        <BoxCollider height={200} width={200} offset={[-100, -200]} onCollisionEnter={this.onCollisionEnter} />
       </DragonBonesComp>
       <SpriteRender node={{ xy: [640, 360] }} spriteFrame={sf_crash}>
         <BoxCollider height={100} width={100} />
