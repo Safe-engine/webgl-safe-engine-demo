@@ -6,10 +6,10 @@ import {
   PhysicsPolygonCollider,
   RigidBody,
   StaticBody,
-} from '@safe-engine/webgl/dist/chipmunk'
+} from '@safe-engine/webgl/dist/box2d-wasm'
 
 import { DragonBonesComp } from '@safe-engine/webgl/dist/dragonbones'
-import { defaultFont, sf_button, sf_crash, sf_dialog_name } from '../assets'
+import { sf_button, sf_crash, sf_dialog_name } from '../assets'
 import { BackButton } from '../components/BackButton'
 
 export class PhysicsScene extends SceneComponent {
@@ -25,7 +25,7 @@ export class PhysicsScene extends SceneComponent {
   onCollisionEnter(other: RigidBody) {
     console.log('box contact', other.props.tag)
     // this.body.position = Vec2(600, 1800)
-    other.node.destroy()
+    // other.node.destroy()
   }
 
   update() {
@@ -34,7 +34,7 @@ export class PhysicsScene extends SceneComponent {
 
   render() {
     <SceneComponent>
-      <LabelComp node={{ xy: [541, 1755] }} string="Hello safex physics" font={defaultFont} />
+      <LabelComp node={{ xy: [541, 1755] }} string="Hello safex physics" />
       <BackButton />
       <SpriteRender node={{ xy: [560, 1030] }} spriteFrame={sf_button}>
         <RigidBody type={DynamicBody} onBeginContact={this.onCollisionEnter} isSensor />

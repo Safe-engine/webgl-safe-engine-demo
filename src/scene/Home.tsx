@@ -22,6 +22,7 @@ import { GraphicsScene } from './GraphicsScene'
 import { InputTestScene } from './InputTestScene'
 import { LabelScene } from './Label'
 import MotionStreakTest from './MotionStreakTest'
+import { PhysicsScene } from './PhysicsScene'
 import { SpineScene } from './SpineScene'
 import SpriteTest from './SpriteTest'
 import { TiledMapScene } from './TiledMapScene'
@@ -74,9 +75,9 @@ export class Home extends SceneComponent {
     if (id === Scenes.Collider) {
       loadScene(CollidersScene)
     }
-    // if (id === Scenes.Physics) {
-    //   loadScene(PhysicsScene)
-    // }
+    if (id === Scenes.Physics) {
+      loadScene(PhysicsScene)
+    }
     if (id === Scenes.Game) {
       loadScene(Game)
     }
