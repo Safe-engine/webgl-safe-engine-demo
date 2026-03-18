@@ -12,7 +12,7 @@ import {
   Vec2
 } from '@safe-engine/webgl'
 
-import { sf_base, sf_button, sf_crash } from '../assets'
+import { sf_base, sf_button } from '../assets'
 import { BLUE, Scenes, WHITE } from '../helper/constant'
 import ButtonScene from './ButtonScene'
 import { CollidersScene } from './CollidersScene'
@@ -90,22 +90,21 @@ export class Home extends SceneComponent {
   }
 
   render() {
-      <SceneComponent>
-        <SpriteRender node={{ xy: [540, 960], color: BLUE }} spriteFrame={sf_base} tiledSize={Size(1080, 1920)}></SpriteRender>
-        <SpriteRender spriteFrame={sf_crash} />
-        <RichTextComp
-          node={{ xy: [640, 140] }}
-          size={72}
-          string="<color=#ff00ff>hello</color> <color=#00ff00>safex</color>"
-        />
-        <ScrollViewComp contentSize={Size(1080, 2120)} viewSize={Size(1080, 2220)} direction={ScrollViewDirection.VERTICAL}>
-          {Home.cases.map((name, j = 1) => (
-            <ButtonComp node={{ xy: [200, 220 + 150 * j] }} spriteFrame={sf_button}onPress={this.onPress} >
-              <LabelComp node={{ position: Vec2(90, 30), color: WHITE }} string={name}  size={48} />
-              <ExtraDataComp key="id" value={j} />
-            </ButtonComp>
-          ))}
-        </ScrollViewComp>
-      </SceneComponent>
+    <SceneComponent>
+      <SpriteRender node={{ xy: [540, 960], color: BLUE }} spriteFrame={sf_base} tiledSize={Size(1080, 1920)}></SpriteRender>
+      <RichTextComp
+        node={{ xy: [640, 140] }}
+        size={72}
+        string="<color=#ff00ff>hello</color> <color=#00ff00>safex</color>"
+      />
+      <ScrollViewComp contentSize={Size(1080, 2120)} viewSize={Size(1080, 2220)} direction={ScrollViewDirection.VERTICAL}>
+        {Home.cases.map((name, j = 1) => (
+          <ButtonComp node={{ xy: [200, 220 + 150 * j] }} spriteFrame={sf_button} onPress={this.onPress} >
+            <LabelComp node={{ position: Vec2(90, 30), color: WHITE }} string={name} size={48} />
+            <ExtraDataComp key="id" value={j} />
+          </ButtonComp>
+        ))}
+      </ScrollViewComp>
+    </SceneComponent>
   }
 }

@@ -12,9 +12,9 @@ import {
   Vec2,
 } from '@safe-engine/webgl'
 
-import { sf_button, sf_crash, sf_dialog_name, sf_progress_bar, sf_streak } from '../assets'
+import { sf_base, sf_button, sf_crash, sf_dialog_name, sf_progress_bar, sf_streak } from '../assets'
 import { BackButton } from '../components/BackButton'
-import { RED, WHITE } from '../helper/constant'
+import { GREEN, RED, WHITE } from '../helper/constant'
 
 export default class SpriteTest extends SceneComponent {
   $cases: NodeComp[] = []
@@ -42,7 +42,7 @@ export default class SpriteTest extends SceneComponent {
   render() {
     <SceneComponent>
       <ButtonComp spriteFrame={sf_button} node={{ xy: [540, 200] }} onPress={this.onPressNext} >
-        <LabelComp string="Next Test"node={{ xy: [85.5, 26] }} >
+        <LabelComp string="Next Test" node={{ xy: [85.5, 26] }} >
         </LabelComp>
       </ButtonComp>
       <NodeRender $pushNode={this.$cases}>
@@ -59,11 +59,9 @@ export default class SpriteTest extends SceneComponent {
       </NodeRender>
       <NodeRender $pushNode={this.$cases}>
         <LabelComp string="9-slice Sprite" node={{ xy: [540, 2000] }} />
-        <SpriteRender
-          spriteFrame={sf_dialog_name}
-          node={{ xy: [500, 800], contentSize: Size(200, 600) }}
-          capInsets={[10, 10, 20, 10]}
-        ></SpriteRender>
+        <SpriteRender spriteFrame={sf_base} capInsets={[1, 1, 1, 1]} node={{ xy: [540, 960], w: 200, h: 300, color: GREEN }} >
+          <SpriteRender spriteFrame={sf_crash} node={{ xy: [50, 50] }} />
+        </SpriteRender>
       </NodeRender>
       <NodeRender $pushNode={this.$cases}>
         <LabelComp string="Sprite Mask" node={{ xy: [540, 2000] }} />
