@@ -6,7 +6,7 @@ import {
   PhysicsPolygonCollider,
   RigidBody,
   StaticBody,
-} from '@safe-engine/webgl/dist/box2d-wasm'
+} from '@safe-engine/webgl/dist/planck'
 
 import { DragonBonesComp } from '@safe-engine/webgl/dist/dragonbones'
 import { sf_button, sf_crash, sf_dialog_name } from '../assets'
