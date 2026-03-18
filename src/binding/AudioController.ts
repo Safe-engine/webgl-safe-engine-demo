@@ -1,10 +1,9 @@
 import { audioEngine } from '@safe-engine/webgl'
-import { back_ground_music_sfx, button_sfx } from '../assets/AudioAssets'
-import { getEffect, getMusic } from '../data/GameDataManager'
+import { button_sfx } from '../assets/AudioAssets'
 
 export default class AudioController {
   private static _instance: AudioController
-  private constructor() {}
+  private constructor() { }
   public static get Instance() {
     if (!AudioController._instance) {
       AudioController._instance = new AudioController()
@@ -13,11 +12,11 @@ export default class AudioController {
   }
 
   playBackgroundMusic() {
-    const newMusicState = getMusic()
+    const newMusicState = true
     // log('toggleBackgroundMusic', this.music);
     if (newMusicState) {
       if (!audioEngine.isMusicPlaying()) {
-        audioEngine.playMusic(back_ground_music_sfx, true)
+        audioEngine.playMusic(button_sfx, true)
         // audioEngine.setMusicVolume(1);
       } else {
         audioEngine.resumeMusic()
@@ -27,9 +26,9 @@ export default class AudioController {
     }
   }
   playEffectSound(type: string) {
-    if (getEffect()) {
-      audioEngine.playEffect(type, false)
-    }
+    // if (getEffect()) {
+    audioEngine.playEffect(type, false)
+    // }
   }
 
   playButtonClickSound() {
