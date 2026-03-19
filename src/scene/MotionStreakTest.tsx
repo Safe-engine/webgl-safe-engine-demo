@@ -1,4 +1,5 @@
-import { MotionStreakComp, SceneComponent } from '@safe-engine/webgl'
+import { SceneComponent } from '@safe-engine/webgl'
+import { MotionStreakComp } from '@safe-engine/webgl/dist/render/MotionStreakComp'
 import { sf_streak } from '../assets'
 import { BackButton } from '../components/BackButton'
 

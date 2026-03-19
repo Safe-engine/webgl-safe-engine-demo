@@ -3,7 +3,6 @@ import {
   GraphicsRender,
   GridLayoutComp,
   LabelComp,
-  MaskRender,
   NodeComp,
   NodeRender,
   SceneComponent,
@@ -11,6 +10,7 @@ import {
   SpriteRender,
   Vec2,
 } from '@safe-engine/webgl'
+import { MaskRender } from '@safe-engine/webgl/dist/render/MaskRender'
 
 import { sf_base, sf_button, sf_crash, sf_dialog_name, sf_progress_bar, sf_streak } from '../assets'
 import { BackButton } from '../components/BackButton'
