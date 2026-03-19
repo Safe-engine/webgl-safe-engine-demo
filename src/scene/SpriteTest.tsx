@@ -59,7 +59,7 @@ export default class SpriteTest extends SceneComponent {
       </NodeRender>
       <NodeRender $pushNode={this.$cases}>
         <LabelComp string="9-slice Sprite" node={{ xy: [540, 2000] }} />
-        <SpriteRender spriteFrame={sf_base} capInsets={[1, 1, 1, 1]} node={{ xy: [540, 960], w: 200, h: 300, color: GREEN }} >
+        <SpriteRender spriteFrame={sf_base} capInsets={[1, 1, 1, 1]} node={{ xy: [540, 960], contentSize: Size(200, 300), color: GREEN }} >
           <SpriteRender spriteFrame={sf_crash} node={{ xy: [50, 50] }} />
         </SpriteRender>
       </NodeRender>
