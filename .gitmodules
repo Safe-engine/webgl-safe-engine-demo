@@ -1,9 +1,3 @@
 [submodule "packages/safe-engine-webgl"]
 	path = packages/safe-engine-webgl
 	url = git@github.com:Safe-engine/safe-engine-webgl.git
-[submodule "packages/safex-webgl"]
-	path = packages/safex-webgl
-	url = git@github.com:Safe-engine/safex-webgl.git
-[submodule "packages/vite-plugin-safex-transform"]
-	path = packages/vite-plugin-safex-transform
-	url = git@github.com:Safe-engine/vite-plugin-safex-transform.git
