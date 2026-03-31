@@ -1,14 +1,13 @@
 import {
   ButtonComp,
   GraphicsRender,
-  GridLayoutComp,
   LabelComp,
   NodeComp,
   NodeRender,
   SceneComponent,
   Size,
   SpriteRender,
-  Vec2,
+  Vec2
 } from '@safe-engine/webgl'
 import { MaskRender } from '@safe-engine/webgl/dist/render/MaskRender'
 
@@ -54,7 +53,6 @@ export default class SpriteTest extends SceneComponent {
           {Array(6).map(() => (
             <SpriteRender spriteFrame={sf_crash} />
           ))}
-          <GridLayoutComp columns={2} />
         </NodeRender>
       </NodeRender>
       <NodeRender $pushNode={this.$cases}>

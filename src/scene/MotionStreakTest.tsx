@@ -11,7 +11,7 @@ export default class MotionStreakTest extends SceneComponent {
     this.streak.node.posY += 10
     if (this.streak.node.posY > 1800) {
       this.streak.node.posY = 0
-      this.streak.reset()
+      this.streak.getRenderNode().reset()
     }
     this.streak2.node.posY += 4
     if (this.streak2.node.posY > 1800) {

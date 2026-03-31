@@ -20,7 +20,7 @@ import { DragonBonesScene } from './DragonBonesScene'
 import { Game } from './Game'
 import { GraphicsScene } from './GraphicsScene'
 import { InputTestScene } from './InputTestScene'
-import { LabelScene } from './Label'
+import { LabelScene } from './LabelScene'
 import MotionStreakTest from './MotionStreakTest'
 import { PhysicsScene } from './PhysicsScene'
 import { SpineScene } from './SpineScene'
@@ -49,7 +49,7 @@ export class Home extends SceneComponent {
   }
 
   onPress(event: ButtonComp) {
-    const id = event.node.getData<Integer>('id')
+    const id = event.node.getData<Integer>('id') as Scenes
     console.log('Clicked', id, Scenes[id])
     if (id === Scenes.Spine) {
       loadScene(SpineScene)

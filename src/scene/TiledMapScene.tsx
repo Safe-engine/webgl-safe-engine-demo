@@ -1,4 +1,4 @@
-import { LabelComp, SceneComponent, SpriteRender, Vec2 } from '@safe-engine/webgl'
+import { LabelComp, SceneComponent, SpriteRender } from '@safe-engine/webgl'
 
 import { TiledMapComp } from '@safe-engine/webgl/dist/fasttiled/TiledMapComp'
 import { map_1_json, sf_crash, sf_dialog_name } from '../assets'
@@ -11,10 +11,10 @@ export class TiledMapScene extends SceneComponent {
 
   start() {
     // console.log('TiledMapScene started', this.tiledMapComp.node.instance)
-    const { x, y } = this.tiledMapComp.getLayer('map').getPositionAt(3, 77)
-    console.log('x y ', x, y)
-    this.spriteRender.node.position = Vec2(x, y)
-    this.spriteRender2.node.position = this.tiledMapComp.getLayer('map').getPositionAt(3, 75)
+    // const { x, y } = this.tiledMapComp.getRenderNode().getLayer('map').getPositionAt(Vec2(3, 77))
+    // console.log('x y ', x, y)
+    // this.spriteRender.node.position = Vec2(x, y)
+    // this.spriteRender2.node.position = this.tiledMapComp.getRenderNode().getLayer('map').getPositionAt(3, 75)
   }
 
   render() {
