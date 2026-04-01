@@ -1,4 +1,4 @@
-import { audioEngine } from '@safe-engine/webgl'
+import { audioEngine } from 'safex-webgl/dist/audio'
 import { button_sfx } from '../assets/AudioAssets'
 
 export default class AudioController {
