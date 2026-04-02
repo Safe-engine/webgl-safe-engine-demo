@@ -57,7 +57,6 @@ export class PhysicsScene extends SceneComponent {
           [44, 119],
           [87, 122],
           [157, 95],
-          [158, 52],
           [121, 7],
           [69, 2],
         ])} />
