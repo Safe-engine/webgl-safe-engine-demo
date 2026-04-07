@@ -1,4 +1,4 @@
-import { LabelComp, SceneComponent, SpriteRender, Vec2 } from '@safe-engine/webgl'
+import { CameraFlag, LabelComp, SceneComponent, SpriteRender, Vec2 } from '@safe-engine/webgl'
 import {
   DynamicBody,
   PhysicsBox,
@@ -7,6 +7,9 @@ import {
   RigidBody,
   StaticBody
 } from '@safe-engine/webgl/dist/box2d-wasm'
+import {
+  CameraComp
+} from '@safe-engine/webgl/dist/camera'
 
 import { DragonBonesComp } from '@safe-engine/webgl/dist/dragonbones'
 import { sf_button, sf_crash, sf_dialog_name } from '../assets'
@@ -21,7 +24,6 @@ export class PhysicsScene extends SceneComponent {
     console.log(this.body.linearVelocity)
     this.body.applyTorque(10)
   }
-
   onCollisionEnter(other: RigidBody) {
     console.log('box contact', other.props.tag)
     // this.body.position = Vec2(600, 1800)
@@ -30,12 +32,14 @@ export class PhysicsScene extends SceneComponent {
 
   update() {
     // console.log('update', this.body.node.rotation)
+    this.defaultCamera.setPosition(this.body.node.position)
   }
 
   render() {
     <SceneComponent>
-      <LabelComp node={{ xy: [541, 1755] }} string="Hello safex physics" />
-      <BackButton />
+      <LabelComp node={{ xy: [541, 1755], cameraMask: CameraFlag.USER1 }} string="Hello safex physics" />
+      <BackButton node={{ cameraMask: CameraFlag.USER1 }} />
+      <CameraComp flag={CameraFlag.USER1} />
       <SpriteRender node={{ xy: [560, 1030] }} spriteFrame={sf_button}>
         <RigidBody type={DynamicBody} onBeginContact={this.onCollisionEnter} shapes={PhysicsBox(52, 171)} />
       </SpriteRender>
