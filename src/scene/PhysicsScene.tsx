@@ -32,7 +32,8 @@ export class PhysicsScene extends SceneComponent {
 
   update() {
     // console.log('update', this.body.node.rotation)
-    this.defaultCamera.setPosition(this.body.node.position)
+    if (this.body)
+      this.defaultCamera.setPosition(this.body.node.position)
   }
 
   render() {
