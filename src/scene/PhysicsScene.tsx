@@ -11,19 +11,19 @@ import {
   CameraComp
 } from '@safe-engine/webgl/dist/camera'
 
-import { DragonBonesComp } from '@safe-engine/webgl/dist/dragonbones'
 import { sf_button, sf_crash, sf_dialog_name } from '../assets'
 import { BackButton } from '../components/BackButton'
 
 export class PhysicsScene extends SceneComponent {
-  dragon: DragonBonesComp
   body: RigidBody
 
   start() {
     this.body.applyLinearImpulse(Vec2(10, 100))
     console.log(this.body.linearVelocity)
     this.body.applyTorque(10)
+    this.defaultCamera.isCenterDraw = true
   }
+
   onCollisionEnter(other: RigidBody) {
     console.log('box contact', other.props.tag)
     // this.body.position = Vec2(600, 1800)
@@ -32,13 +32,13 @@ export class PhysicsScene extends SceneComponent {
 
   update() {
     // console.log('update', this.body.node.rotation)
-    if (this.body)
-      this.defaultCamera.setPosition(this.body.node.position)
+    // if (this.body)
+      // this.defaultCamera.setPosition(this.body.node.position)
   }
 
   render() {
     <SceneComponent>
-      <LabelComp node={{ xy: [541, 1755], cameraMask: CameraFlag.USER1 }} string="Hello safex physics" />
+      <LabelComp node={{ xy: [541, 1755], cameraMask: CameraFlag.USER5 }} string="Hello safex physics" />
       <BackButton node={{ cameraMask: CameraFlag.USER1 }} />
       <CameraComp flag={CameraFlag.USER1} />
       <SpriteRender node={{ xy: [560, 1030] }} spriteFrame={sf_button}>
