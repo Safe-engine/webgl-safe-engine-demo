@@ -16,7 +16,6 @@ import { sf_base, sf_button } from '../assets'
 import { BLUE, Scenes, WHITE } from '../helper/constant'
 import ButtonScene from './ButtonScene'
 import { CollidersScene } from './CollidersScene'
-import { DicingScene } from './DicingScene'
 import { DragonBonesScene } from './DragonBonesScene'
 import { Game } from './Game'
 import { GraphicsScene } from './GraphicsScene'
@@ -46,7 +45,7 @@ export class Home extends SceneComponent {
 
   start() {
     console.log('you win')
-    loadScene(DicingScene)
+    // loadScene(DicingScene)
   }
 
   onPress(event: ButtonComp) {
